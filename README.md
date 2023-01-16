@@ -46,19 +46,21 @@ $ npm install
 3.In the database/database-source.ts in the DataSourceOptions place the configuration of your postgresql server for the application to connect to the database.
 
 https://github.com/uppy19d0/ms-taxi24-api/blob/7f5ce24cbfe40927c4b96c242808b3cc93d9f153/database/database-source.ts#L3-L13
+```
+  export const DatabaseSourceOptions: DataSourceOptions = {
+  ssl: false,
+  type: 'postgres',
+  host: 'localhost',
+  database: 'taxi24_db',---here the name of you database in my case is taxi24_db
+  username: 'postgres',---here the name of you user of database
+  password: '', --here the password of the database
+  port: 5432,
+  entities: ['dist/**/*.entity{.ts,.js}'],
+  migrations: ['dist/database/migrations/*.js'],
+  };
 
-export const DatabaseSourceOptions: DataSourceOptions = {
-ssl: false,
-type: 'postgres',
-host: 'localhost',
-database: 'taxi24_db',---here the name of you database in my case is taxi24_db
-username: 'postgres',---here the name of you user of database
-password: '', --here the password of the database
-port: 5432,
-entities: ['dist/**/*.entity{.ts,.js}'],
-migrations: ['dist/database/migrations/*.js'],
-};
 
+```
 4. Run migration to database
 
 ```
