@@ -22,12 +22,15 @@ export class Invoice extends BaseEntity {
   cost: number;
 
   @ManyToOne(() => Driver, (driver) => driver.invoice)
+  @JoinColumn({ name: 'driver_id' })
   driver: Driver;
 
   @ManyToOne(() => Passenger, (passeger) => passeger.invoice)
+  @JoinColumn({ name: 'passenger_id' })
   passenger: Passenger;
 
   @ManyToOne(() => Trip, (trip) => trip.invoice)
+  @JoinColumn({ name: 'trip_id' })
   trip: Trip;
 
   @CreateDateColumn({ type: 'timestamp', name: 'created_at' })

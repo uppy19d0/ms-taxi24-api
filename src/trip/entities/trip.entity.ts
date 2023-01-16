@@ -6,6 +6,7 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  JoinColumn,
   ManyToOne,
   OneToMany,
   PrimaryGeneratedColumn,
@@ -33,14 +34,15 @@ export class Trip extends BaseEntity {
   is_complete: boolean;
 
   @ManyToOne(() => Driver, (driver) => driver.trip)
+  @JoinColumn({ name: 'driver_id' })
   driver: Driver;
 
   @ManyToOne(() => Passenger, (passeger) => passeger.trip)
+  @JoinColumn({ name: 'passenger_id' })
   passenger: Passenger;
 
   @OneToMany(() => Invoice, (invoice) => invoice.trip)
   public invoice: Invoice[];
-
 
   @CreateDateColumn({ type: 'timestamp', name: 'created_at' })
   createdAt: Date;

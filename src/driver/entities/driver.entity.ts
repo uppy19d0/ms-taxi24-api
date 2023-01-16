@@ -7,6 +7,7 @@ import {
   Entity,
   JoinColumn,
   OneToMany,
+  OneToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
@@ -31,10 +32,10 @@ export class Driver extends BaseEntity {
   @Column()
   is_available: boolean;
 
-  @OneToMany(() => Trip, (trip) => trip.driver)
+  @OneToOne(() => Trip, (trip) => trip.driver)
   public trip!: Trip[];
 
-  @OneToMany(() => Invoice, (invoice) => invoice.driver)
+  @OneToOne(() => Invoice, (invoice) => invoice.driver)
   public invoice: Invoice[];
 
   @CreateDateColumn({ type: 'timestamp', name: 'created_at' })

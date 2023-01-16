@@ -4,7 +4,7 @@
   "port": 5432,
   "username": "postgres",
   "password": "root",
-  "database": "taxi24_db",
+  "database": "testdb",
   "entities": ["dist/**/*.entity{ .ts,.js}"],
   "synchronize": true,
   "migrations": ["dist/migrations/*{.ts,.js}"],
