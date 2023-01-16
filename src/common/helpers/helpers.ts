@@ -52,3 +52,5 @@ export class Helper {
     }
   };
 }
+
+// export default helper = new Helper();

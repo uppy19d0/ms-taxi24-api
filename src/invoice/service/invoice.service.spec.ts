@@ -12,7 +12,8 @@ describe('InvoiceService', () => {
     service = module.get<InvoiceService>(InvoiceService);
   });
 
-  it('should be defined', () => {
-    expect(service).toBeDefined();
-  });
+   it('should return all invoices', async () => {
+     const invoices = await service.getAll();
+    expect.arrayContaining(invoices);
+   });
 });

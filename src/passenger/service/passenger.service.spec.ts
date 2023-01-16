@@ -12,7 +12,9 @@ describe('PassengerService', () => {
     service = module.get<PassengerService>(PassengerService);
   });
 
-  it('should be defined', () => {
-    expect(service).toBeDefined();
+  it('should return all passengers', async () => {
+    const passengers = await service.getPassengers();
+    expect.arrayContaining(passengers);
   });
+
 });

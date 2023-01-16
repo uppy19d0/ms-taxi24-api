@@ -12,7 +12,12 @@ describe('DriverService', () => {
     service = module.get<DriverService>(DriverService);
   });
 
-  it('should be defined', () => {
-    expect(service).toBeDefined();
+  it('should return all drivers', async () => {
+    const drivers = await service.getDrivers();
+    expect.arrayContaining(drivers);
+  });
+  it('should return all available drivers', async () => {
+    const drivers = await service.getAvailableDrivers();
+    expect.arrayContaining(drivers);
   });
 });

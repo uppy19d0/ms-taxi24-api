@@ -3,7 +3,6 @@ import { CreateDriverDTO } from '../dto/driver.dto';
 import { Like, Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Driver } from '../entities/driver.entity';
-// import { Helper } from 'src/common/helpers/helpers';
 
 @Injectable()
 export class DriverService {

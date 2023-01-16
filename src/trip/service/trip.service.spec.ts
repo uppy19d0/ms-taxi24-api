@@ -12,7 +12,9 @@ describe('TripService', () => {
     service = module.get<TripService>(TripService);
   });
 
-  it('should be defined', () => {
-    expect(service).toBeDefined();
+
+  it('should return all trip', async () => {
+    const trips = await service.getTrips();
+    expect.arrayContaining(trips);
   });
 });

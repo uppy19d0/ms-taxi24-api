@@ -1,5 +1,5 @@
-import { Invoice } from 'src/invoice/entities/invoice.entity';
-import { Trip } from 'src/trip/entities/trip.entity';
+import { Invoice } from './../../invoice/entities/invoice.entity';
+import { Trip } from './../../trip/entities/trip.entity';
 import {
   BaseEntity,
   Column,
